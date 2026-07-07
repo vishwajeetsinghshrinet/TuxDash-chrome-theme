@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Linux Core Theme",
+  "description": "Random Linux wallpapers on every new tab.",
+  "version": "1.0",
+
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+
+  "icons": {
+    "128": "icons/icon.jpeg"
+  }
+}
