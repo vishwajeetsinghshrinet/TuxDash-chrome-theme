@@ -3,12 +3,6 @@ const wallpapers = [
   "images/tux-02.webp",
   "images/tux-03.webp",
   "images/tux-04.webp",
-  "images/tux-05.webp",
-  "images/tux-06.webp",
-  "images/tux-07.webp",
-  "images/tux-08.webp",
-  "images/tux-09.webp",
-  "images/tux-10.webp",
 ];
 
 const previousButton = document.getElementById("previousWallpaper");
