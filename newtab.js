@@ -14,8 +14,14 @@ const wallpaperCounter = document.getElementById("wallpaperCounter");
 const timeElement = document.getElementById("time");
 const dateElement = document.getElementById("date");
 
-const favoriteWallpapers =
-  JSON.parse(localStorage.getItem("tuxdashFavorites")) || [];
+let favoriteWallpapers = [];
+
+try {
+  favoriteWallpapers =
+    JSON.parse(localStorage.getItem("tuxdashFavorites")) || [];
+} catch {
+  favoriteWallpapers = [];
+}
 
 let currentIndex = Math.floor(Math.random() * wallpapers.length);
 
