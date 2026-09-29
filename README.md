@@ -35,4 +35,4 @@ The core extension is functional, and new features are currently being developed
 
 ## License
 
-License information will be added before the first public release.
+MIT License
