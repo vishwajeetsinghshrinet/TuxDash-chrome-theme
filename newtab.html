@@ -2,14 +2,104 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Linux</title>
-    <link rel="stylesheet" href="newtab.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TuxDash</title>
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <div class="overlay">
-      <h1>Who i am ?</h1>
+    <!-- Clock -->
+    <div class="clock">
+      <div id="time">00:00</div>
+      <div id="date">Loading...</div>
     </div>
 
-    <script src="newtab.js"></script>
+    <main class="dashboard">
+      <div class="overlay">
+        <h1>TuxDash</h1>
+
+        <!-- Search -->
+        <form
+          class="search-form"
+          action="https://www.google.com/search"
+          method="get"
+          target="_blank"
+        >
+          <input
+            type="search"
+            name="q"
+            placeholder="Search the web..."
+            aria-label="Search the web"
+            autocomplete="off"
+          />
+        </form>
+
+        <!-- Quick Links -->
+        <nav class="quick-links" aria-label="Quick links">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+          </a>
+
+          <a
+            href="https://mail.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gmail
+          </a>
+
+          <a
+            href="https://wordpress.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WordPress
+          </a>
+        </nav>
+
+        <!-- Wallpaper Controls -->
+        <div class="wallpaper-controls">
+          <button
+            id="previousWallpaper"
+            type="button"
+            aria-label="Previous wallpaper"
+          >
+            ←
+          </button>
+
+          <span id="wallpaperCounter">1 / 1</span>
+
+          <button id="nextWallpaper" type="button" aria-label="Next wallpaper">
+            →
+          </button>
+
+          <button
+            id="favoriteWallpaper"
+            class="favorite-button"
+            type="button"
+            aria-label="Favorite wallpaper"
+            aria-pressed="false"
+          >
+            ♡
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/newtab.js"></script>
   </body>
 </html>

@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Linux Core Theme",
-  "description": "Random Linux wallpapers on every new tab.",
-  "version": "1.0",
+  "name": "TuxDash",
+  "description": "A dark Linux-inspired new tab experience with dynamic Tux wallpapers.",
+  "version": "1.0.0",
 
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
 
   "icons": {
-    "128": "icons/icon.jpeg"
+    "128": "icons/icontuxdash.jpeg"
   }
 }
