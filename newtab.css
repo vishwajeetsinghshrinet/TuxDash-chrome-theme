@@ -61,25 +61,18 @@ body {
 /* Main Content */
 
 .overlay {
-  width: min(90%, 600px);
-
-  padding: 32px;
-
+  width: min(90%, 450px);
+  padding: 30px;
   text-align: center;
-
   background: rgba(0, 0, 0, 0.45);
-
   border-radius: 14px;
-
   backdrop-filter: blur(5px);
 }
 
 .overlay h1 {
-  margin-bottom: 24px;
-
-  font-size: 36px;
+  margin-bottom: 25px;
+  font-size: 30px;
   font-weight: 600;
-
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -91,20 +84,13 @@ body {
 
 .search-form input {
   width: 100%;
-
-  padding: 14px 18px;
-
+  padding: 15px 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-
   outline: none;
-
   background: rgba(255, 255, 255, 0.12);
-
   color: #ffffff;
-
-  font-size: 16px;
-
+  font-size: 15px;
   transition:
     background 0.2s ease,
     border-color 0.2s ease;
@@ -194,9 +180,7 @@ body {
 
 #wallpaperCounter {
   min-width: 55px;
-
   color: rgba(255, 255, 255, 0.85);
-
   font-size: 14px;
 }
 
@@ -206,6 +190,17 @@ body {
 
 .favorite-button.is-favorite {
   color: #ffcc00;
+}
+
+.theme-credit,
+.theme-credit a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: white;
+  margin-top: 20px;
+  letter-spacing: 1px;
 }
 
 /* Mobile */
