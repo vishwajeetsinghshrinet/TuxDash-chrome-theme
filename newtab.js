@@ -4,6 +4,14 @@ const wallpapers = [
   "images/tux-3.webp",
   "images/tux-4.webp",
   "images/tux-5.webp",
+  "images/tux-6.webp",
+  "images/tux-7.webp",
+  "images/tux-8.webp",
+  "images/tux-9.webp",
+  "images/tux-10.webp",
+  "images/tux-11.webp",
+  "images/tux-12.webp",
+  "images/tux-13.webp",
 ];
 
 const previousButton = document.getElementById("previousWallpaper");
@@ -117,9 +125,5 @@ function updateClock() {
 updateClock();
 
 setInterval(updateClock, 1000);
-
-/**
- * Start
- */
 
 showWallpaper();

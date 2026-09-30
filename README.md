@@ -7,6 +7,9 @@ TuxDash dynamically changes the wallpaper when you open a new tab, giving your b
 ## Features
 
 - Linux and Tux-inspired wallpapers
+- Time & Date
+- Search Bar
+- Important Custom URL
 - Dark, modern visual style
 - Dynamic wallpaper selection
 - 10–15 curated wallpapers
