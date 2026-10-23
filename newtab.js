@@ -18,6 +18,8 @@ const previousButton = document.getElementById("previousWallpaper");
 const nextButton = document.getElementById("nextWallpaper");
 const favoriteButton = document.getElementById("favoriteWallpaper");
 const wallpaperCounter = document.getElementById("wallpaperCounter");
+const appsLauncher = document.getElementById("appsLauncher");
+const appsMenu = document.getElementById("appsMenu");
 
 const timeElement = document.getElementById("time");
 const dateElement = document.getElementById("date");
@@ -99,6 +101,35 @@ nextButton.addEventListener("click", nextWallpaper);
 previousButton.addEventListener("click", previousWallpaper);
 
 favoriteButton.addEventListener("click", toggleFavorite);
+
+/**
+ * App launcher
+ */
+
+function closeAppsMenu() {
+  appsMenu.hidden = true;
+  appsLauncher.setAttribute("aria-expanded", "false");
+}
+
+appsLauncher.addEventListener("click", () => {
+  const willOpen = appsMenu.hidden;
+
+  appsMenu.hidden = !willOpen;
+  appsLauncher.setAttribute("aria-expanded", String(willOpen));
+});
+
+document.addEventListener("click", (event) => {
+  if (!appsMenu.hidden && !event.target.closest(".page-controls")) {
+    closeAppsMenu();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !appsMenu.hidden) {
+    closeAppsMenu();
+    appsLauncher.focus();
+  }
+});
 
 /**
  * Clock
