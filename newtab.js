@@ -126,7 +126,7 @@ favoriteButton.addEventListener("click", toggleFavorite);
  */
 
 const googleApps = [
-  { id: "account", name: "Account", url: "https://myaccount.google.com/", icon: "account.svg" },
+  { id: "account", name: "Account", url: "https://myaccount.google.com/" },
   { id: "search", name: "Search", url: "https://www.google.com/" },
   { id: "maps", name: "Maps", url: "https://maps.google.com/" },
   { id: "youtube", name: "YouTube", url: "https://www.youtube.com/" },
@@ -247,11 +247,11 @@ function buildAppTile(app) {
     tile.href = app.url;
   }
   const icon = document.createElement("img");
-  icon.src = "icons/apps/" + (app.icon ?? app.id + ".webp");
   if (app.id === "account") {
-    icon.dataset.accountAvatar = "";
-    icon.referrerPolicy = "no-referrer";
-    icon.src = document.querySelector("#profileButton img").src;
+    icon.className = "account-avatar";
+    icon.src = "icons/tuxdash-128.png";
+  } else {
+    icon.src = "icons/apps/" + (app.icon ?? app.id + ".webp");
   }
   icon.alt = "";
   icon.width = 36;

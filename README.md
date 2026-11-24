@@ -14,11 +14,9 @@ TuxDash is a Chrome New Tab extension with 13 Linux-inspired Tux wallpapers. Eac
 - Local clock and date, with optional weather for a city you choose.
 - Google search and shortcuts to Gmail, Airtable, Teamwork, Slack, and ChatGPT. The Airtable, Teamwork, and Slack links point to the project's configured workspaces.
 - Searchable launcher with 82 apps. Use the pencil to choose favorites.
-- Optional Google account photo in the header and account menu.
+- The Linux penguin appears in the header, account menu, and Account launcher tile.
 
 ## Privacy
-
-The account menu offers **Use Google profile photo**. If you enable it, Chrome asks for access to `https://www.google.com/*`. When you visit Google, TuxDash reads the image from its account button and saves the image URL in this browser profile. New tabs load the photo from Google. Turning the option off removes the saved URL and revokes the site permission.
 
 **Weather:** Select **Set weather city**, search by name, and choose a result. TuxDash sends the search text and selected city coordinates to [Open-Meteo](https://open-meteo.com/) and stores the city and latest reading locally. Visible tabs refresh current conditions about every 15 minutes. Times use the browser's local timezone. **Clear weather location** removes the selection and stops updates.
 

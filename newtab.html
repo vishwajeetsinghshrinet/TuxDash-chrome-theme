@@ -52,18 +52,13 @@
 
       <button id="profileButton" class="profile-button" popovertarget="accountMenu"
         type="button" aria-label="Google Account" title="Google Account">
-        <img data-account-avatar referrerpolicy="no-referrer" src="icons/apps/account.svg" width="34" height="34" alt="" />
+        <img class="account-avatar" src="icons/tuxdash-128.png" width="34" height="34" alt="" />
       </button>
       <nav id="accountMenu" class="google-panel account-panel" popover aria-labelledby="accountTitle">
-        <img class="account-avatar" data-account-avatar referrerpolicy="no-referrer" src="icons/apps/account.svg" width="54" height="54" alt="" />
+        <img class="account-avatar" src="icons/tuxdash-128.png" width="54" height="54" alt="" />
         <h2 id="accountTitle">Google Account</h2>
         <a class="manage-account" href="https://myaccount.google.com/">Manage your Google Account</a>
         <a class="switch-account" href="https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fmyaccount.google.com%2F">Switch account</a>
-        <div class="account-photo-settings" id="photoSettings" hidden>
-          <button type="button" id="photoToggle" aria-pressed="false">Use Google profile photo</button>
-          <p id="photoStatus" role="status"></p>
-          <a id="photoGoogleLink" href="https://www.google.com/" target="_blank" rel="noopener noreferrer" hidden>Visit Google</a>
-        </div>
       </nav>
     </div>
 
@@ -199,7 +194,6 @@
     </main>
 
     <script src="newtab.js"></script>
-    <script src="account-photo.js"></script>
     <script type="module" src="weather.js"></script>
   </body>
 </html>
