@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>TuxDash</title>
+    <link rel="icon" type="image/jpeg" href="icons/icontuxdash.jpeg" />
 
     <link rel="stylesheet" href="newtab.css" />
   </head>
@@ -17,157 +18,84 @@
         <a href="https://images.google.com/" target="_self">Images</a>
       </div>
 
-      <button
-        id="appsLauncher"
-        class="icon-button apps-launcher"
-        type="button"
-        aria-label="Open apps"
-        aria-expanded="false"
-        aria-controls="appsMenu"
-      >
+      <button class="icon-button" id="appsLauncher" popovertarget="appsMenu"
+        type="button" aria-label="Google apps" title="Google apps">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="5" cy="5" r="1.6" />
-          <circle cx="12" cy="5" r="1.6" />
-          <circle cx="19" cy="5" r="1.6" />
-          <circle cx="5" cy="12" r="1.6" />
-          <circle cx="12" cy="12" r="1.6" />
-          <circle cx="19" cy="12" r="1.6" />
-          <circle cx="5" cy="19" r="1.6" />
-          <circle cx="12" cy="19" r="1.6" />
-          <circle cx="19" cy="19" r="1.6" />
+          <path fill="currentColor" d="M6 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM6 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM6 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
         </svg>
       </button>
 
-      <a
-        id="profileButton"
-        class="profile-button"
-        href="https://myaccount.google.com/"
-        target="_self"
-        aria-label="Open Google Account"
-      >
-        <img
-          src="https://www.google.com/s2/favicons?domain=myaccount.google.com&sz=64"
-          alt=""
-        />
-      </a>
-
-      <div id="appsMenu" class="apps-menu" hidden>
-        <section class="favorite-apps" aria-labelledby="favoritesTitle">
-          <div class="apps-menu-heading">
-            <h2 id="favoritesTitle">Your favorites</h2>
-            <button class="edit-apps" type="button" aria-label="Edit favorites">
-              ✎
-            </button>
-          </div>
-          <div class="apps-grid">
-            <a
-              class="app-tile"
-              href="https://myaccount.google.com/"
-              target="_self"
-              ><img
-                class="app-avatar"
-                src="https://www.google.com/s2/favicons?domain=myaccount.google.com&sz=64"
-                alt=""
-              /><span>Account</span></a
-            >
-            <a class="app-tile" href="https://www.google.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=google.com&sz=64"
-                alt=""
-              /><span>Search</span></a
-            >
-            <a class="app-tile" href="https://maps.google.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=maps.google.com&sz=64"
-                alt=""
-              /><span>Maps</span></a
-            >
-            <a class="app-tile" href="https://www.youtube.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64"
-                alt=""
-              /><span>YouTube</span></a
-            >
-            <a class="app-tile" href="https://gemini.google.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64"
-                alt=""
-              /><span>Gemini</span></a
-            >
-            <a class="app-tile" href="https://mail.google.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=mail.google.com&sz=64"
-                alt=""
-              /><span>Gmail</span></a
-            >
-            <a class="app-tile" href="https://meet.google.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=meet.google.com&sz=64"
-                alt=""
-              /><span>Meet</span></a
-            >
-            <a class="app-tile" href="https://docs.google.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=docs.google.com&sz=64"
-                alt=""
-              /><span>Docs</span></a
-            >
-            <a class="app-tile" href="https://sheets.google.com/" target="_self"
-              ><img
-                src="https://www.google.com/s2/favicons?domain=sheets.google.com&sz=64"
-                alt=""
-              /><span>Sheets</span></a
-            >
-          </div>
-        </section>
-        <div class="more-apps apps-grid">
-          <a class="app-tile" href="https://drive.google.com/" target="_self"
-            ><img
-              src="https://www.google.com/s2/favicons?domain=drive.google.com&sz=64"
-              alt=""
-            /><span>Drive</span></a
-          >
-          <a class="app-tile" href="https://calendar.google.com/" target="_self"
-            ><img
-              src="https://www.google.com/s2/favicons?domain=calendar.google.com&sz=64"
-              alt=""
-            /><span>Calendar</span></a
-          >
-          <a class="app-tile" href="https://news.google.com/" target="_self"
-            ><img
-              src="https://www.google.com/s2/favicons?domain=news.google.com&sz=64"
-              alt=""
-            /><span>News</span></a
-          >
-          <a class="app-tile" href="https://photos.google.com/" target="_self"
-            ><img
-              src="https://www.google.com/s2/favicons?domain=photos.google.com&sz=64"
-              alt=""
-            /><span>Photos</span></a
-          >
-          <a
-            class="app-tile"
-            href="https://translate.google.com/"
-            target="_self"
-            ><img
-              src="https://www.google.com/s2/favicons?domain=translate.google.com&sz=64"
-              alt=""
-            /><span>Translate</span></a
-          >
-          <a class="app-tile" href="https://play.google.com/" target="_self"
-            ><img
-              src="https://www.google.com/s2/favicons?domain=play.google.com&sz=64"
-              alt=""
-            /><span>Play</span></a
-          >
+      <div id="appsMenu" class="google-panel" popover aria-label="Google apps" role="region">
+        <div class="app-search">
+          <input id="appSearch" type="search" placeholder="Find an app" aria-label="Find a Google app" autocomplete="off" />
+          <a href="https://about.google/products/#google-products">All products</a>
         </div>
+        <section id="favoritesSection" class="apps-group" aria-labelledby="favoritesTitle">
+          <header class="apps-menu-heading">
+            <h2 id="favoritesTitle">Your favorites</h2>
+            <button id="editApps" class="panel-button" type="button" aria-label="Edit favorites" title="Edit favorites">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="m4 16-1 5 5-1L20 8l-4-4L4 16Zm9-9 4 4"/>
+              </svg>
+              <span hidden>Done</span>
+            </button>
+          </header>
+          <div id="favoriteApps" class="apps-grid"></div>
+          <p id="emptyFavorites" hidden>Use the pencil to add favorite apps.</p>
+        </section>
+        <section id="moreAppsSection" class="apps-group" aria-labelledby="moreAppsTitle">
+          <h2 id="moreAppsTitle">More apps</h2>
+          <div id="moreApps" class="apps-grid"></div>
+        </section>
+        <p id="noMatchingApps" role="status" hidden>No matching apps.</p>
       </div>
+
+      <button id="profileButton" class="profile-button" popovertarget="accountMenu"
+        type="button" aria-label="Google Account" title="Google Account">
+        <img data-account-avatar referrerpolicy="no-referrer" src="icons/apps/account.svg" width="34" height="34" alt="" />
+      </button>
+      <nav id="accountMenu" class="google-panel account-panel" popover aria-labelledby="accountTitle">
+        <img class="account-avatar" data-account-avatar referrerpolicy="no-referrer" src="icons/apps/account.svg" width="54" height="54" alt="" />
+        <h2 id="accountTitle">Google Account</h2>
+        <a class="manage-account" href="https://myaccount.google.com/">Manage your Google Account</a>
+        <a class="switch-account" href="https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fmyaccount.google.com%2F">Switch account</a>
+        <div class="account-photo-settings" id="photoSettings" hidden>
+          <button type="button" id="photoToggle" aria-pressed="false">Use Google profile photo</button>
+          <p id="photoStatus" role="status"></p>
+          <a id="photoGoogleLink" href="https://www.google.com/" target="_blank" rel="noopener noreferrer" hidden>Visit Google</a>
+        </div>
+      </nav>
     </div>
 
     <!-- Clock -->
     <div class="clock">
       <div id="time">00:00</div>
       <div id="date">Loading...</div>
+      <section class="weather" aria-label="Local weather">
+        <button type="button" id="weatherButton" popovertarget="weatherSettings">
+          <span id="weatherIcon" aria-hidden="true">☁</span>
+          <span id="weatherSummary">Set weather city</span>
+        </button>
+        <div id="weatherMeta" hidden>
+          <span id="weatherAsOf"></span> · <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+        </div>
+        <div id="weatherSettings" popover aria-labelledby="weatherTitle">
+          <header>
+            <h2 id="weatherTitle">Weather location</h2>
+            <button type="button" popovertarget="weatherSettings" popovertargetaction="hide" aria-label="Close weather settings">×</button>
+          </header>
+          <form id="cityForm">
+            <label for="cityName">Find your city</label>
+            <div class="city-search">
+              <input type="search" id="cityName" placeholder="City name" minlength="2" maxlength="100" required autocomplete="off" />
+              <button type="submit">Search</button>
+            </div>
+          </form>
+          <p id="cityStatus" role="status"></p>
+          <ul id="cityResults"></ul>
+          <button type="button" id="removeWeather" hidden>Clear weather location</button>
+        </div>
+      </section>
     </div>
 
     <main class="dashboard">
@@ -181,6 +109,10 @@
           method="get"
           target="_self"
         >
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" />
+            <path d="m16 16 4.5 4.5" />
+          </svg>
           <input
             type="search"
             name="q"
@@ -209,6 +141,15 @@
           </a>
 
           <a
+            href="https://thedigitaldepartment.eu.teamwork.com/"
+            target="_self"
+            rel="noopener noreferrer"
+            aria-label="TW (Teamwork)"
+          >
+            TW
+          </a>
+
+          <a
             href="https://app.slack.com/client/T04JURZBFQC/"
             target="_self"
             rel="noopener noreferrer"
@@ -221,39 +162,35 @@
             target="_self"
             rel="noopener noreferrer"
           >
-            Chatgpt
+            ChatGPT
           </a>
         </nav>
 
         <!-- Wallpaper Controls -->
         <div class="wallpaper-controls">
-          <button
-            id="previousWallpaper"
-            type="button"
-            aria-label="Previous wallpaper"
-          >
-            ←
-          </button>
-
-          <span id="wallpaperCounter">1 / 1</span>
-
-          <button id="nextWallpaper" type="button" aria-label="Next wallpaper">
-            →
-          </button>
-
-          <button
-            id="favoriteWallpaper"
-            class="favorite-button"
-            type="button"
-            aria-label="Favorite wallpaper"
-            aria-pressed="false"
-          >
-            ♡
+          <div class="wallpaper-pager" role="group" aria-label="Wallpaper navigation">
+            <button id="previousWallpaper" type="button" aria-label="Previous wallpaper" title="Previous wallpaper">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 12H5m6-6-6 6 6 6" />
+              </svg>
+            </button>
+            <span id="wallpaperCounter" aria-live="polite" aria-atomic="true">1 / 13</span>
+            <button id="nextWallpaper" type="button" aria-label="Next wallpaper" title="Next wallpaper">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </button>
+          </div>
+          <button id="favoriteWallpaper" class="favorite-button" type="button"
+            aria-label="Favorite wallpaper" title="Favorite wallpaper" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20s-8.5-5.3-8.5-11a4.6 4.6 0 0 1 8.5-2.5A4.6 4.6 0 0 1 20.5 9C20.5 14.7 12 20 12 20Z" />
+            </svg>
           </button>
         </div>
 
         <div class="theme-credit">
-          Made By
+          Made by
           <a href="https://vishwajeetsinghshrinet.github.io/portfolio/"
             >Vishwajeet Singh</a
           >
@@ -262,5 +199,7 @@
     </main>
 
     <script src="newtab.js"></script>
+    <script src="account-photo.js"></script>
+    <script type="module" src="weather.js"></script>
   </body>
 </html>

@@ -31,31 +31,29 @@ body {
 }
 
 .icon-button,
-.profile-button {
-  display: grid;
+.profile-button,
+.panel-button {
+  display: inline-grid;
   place-items: center;
+  width: 40px;
+  height: 40px;
   border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #e3e3e3;
   cursor: pointer;
 }
 
-.icon-button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.82);
-}
-
 .icon-button:hover,
-.icon-button:focus-visible {
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
+.profile-button:hover,
+.page-controls:has(#appsMenu:popover-open) #appsLauncher,
+.page-controls:has(#accountMenu:popover-open) #profileButton {
+  background: rgb(255 255 255 / 16%);
 }
 
 .icon-button svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+  width: 22px;
+  height: 22px;
 }
 
 .google-links {
@@ -64,120 +62,230 @@ body {
 }
 
 .google-links a {
-  color: #ffffff;
-  font-size: 12px;
+  color: white;
+  font-size: 13px;
   text-decoration: none;
 }
 
-.google-links a:hover,
-.google-links a:focus-visible {
+.google-links a:hover {
   text-decoration: underline;
 }
 
-.profile-button {
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  overflow: hidden;
-  border-radius: 50%;
-  background: #6e8792;
-  box-shadow: 0 0 0 2px transparent;
-}
-
-.profile-button:hover,
-.profile-button:focus-visible {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.72);
-}
-
-.profile-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.apps-menu {
-  position: absolute;
-  top: 44px;
-  right: 0;
-  width: 310px;
-  max-height: min(500px, calc(100vh - 66px));
-  padding: 7px;
+.google-panel {
+  position: fixed;
+  inset: 60px 16px auto auto;
+  width: min(348px, calc(100vw - 24px));
+  max-height: calc(100dvh - 76px);
+  margin: 0;
+  padding: 8px;
   overflow-y: auto;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 25px;
-  background: #2b2c2e;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #63676c transparent;
+  color-scheme: dark;
+  color: #e3e3e3;
+  background: #282a2c;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 26px;
+  box-shadow: 0 8px 28px rgb(0 0 0 / 35%);
 }
 
-.favorite-apps {
-  padding: 18px 14px 13px;
-  border-radius: 21px;
-  background: #1f2020;
+.app-search {
+  position: sticky;
+  top: -8px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px 12px;
+  background: #282a2c;
+}
+
+.app-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 14px;
+  border: 1px solid #63676c;
+  border-radius: 20px;
+  background: #1b1b1f;
+  color: #e3e3e3;
+  font: inherit;
+  font-size: 14px;
+}
+
+.app-search a {
+  padding: 6px;
+  color: #c2e7ff;
+  font-size: 13px;
+}
+
+#noMatchingApps {
+  padding: 12px 8px;
+  font-size: 14px;
+}
+
+.app-tile span {
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.apps-group {
+  padding: 12px 10px 10px;
+  border-radius: 20px;
+  background: #1b1b1f;
+}
+
+.apps-group + .apps-group {
+  margin-top: 5px;
 }
 
 .apps-menu-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 4px 15px;
+  margin: 0 4px 5px;
 }
 
-.apps-menu-heading h2 {
-  color: #d3e3fd;
-  font-size: 18px;
+.apps-group h2 {
+  margin: 4px 8px 8px;
+  color: #c2e7ff;
+  font-size: 15px;
   font-weight: 500;
 }
 
-.edit-apps {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border: 0;
-  border-radius: 50%;
-  background: #535554;
-  color: #e3e3e3;
-  font-size: 23px;
-  cursor: pointer;
+.apps-menu-heading h2 {
+  margin: 0 4px;
+}
+
+.panel-button {
+  min-width: 34px;
+  height: 34px;
+  width: auto;
+  padding: 0 8px;
+  border-radius: 18px;
+  color: #c2e7ff;
+  background: #34373a;
+  font-weight: 600;
+}
+
+.panel-button:hover {
+  background: #45494e;
 }
 
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px 6px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
 }
 
 .app-tile {
+  position: relative;
   display: grid;
-  min-height: 75px;
-  place-items: center;
-  align-content: start;
-  gap: 7px;
-  padding: 5px 1px;
-  border-radius: 12px;
+  justify-items: center;
+  align-content: center;
+  gap: 6px;
+  min-height: 72px;
+  padding: 7px 3px;
+  border-radius: 16px;
   color: #e8eaed;
-  font-size: 12px;
+  font-size: 13px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .app-tile:hover,
-.app-tile:focus-visible {
-  background: rgba(255, 255, 255, 0.12);
+.switch-account:hover {
+  background: #303134;
 }
 
-.app-tile img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+.app-tile input {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  accent-color: #a8c7fa;
 }
 
-.app-tile img.app-avatar {
+.app-tile:has(:checked) {
+  background: #253449;
+}
+
+.page-controls :focus-visible,
+.app-tile:has(:focus-visible) {
+  outline: 2px solid #a8c7fa;
+  outline-offset: 1px;
+}
+
+#emptyFavorites {
+  margin: 12px 8px;
+  font-size: 13px;
+}
+
+.account-panel {
+  width: min(296px, calc(100vw - 24px));
+  padding: 22px 12px 12px;
+  text-align: center;
+}
+
+.account-panel h2 {
+  margin: 8px 0 16px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.account-panel a {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  padding: 10px 16px;
+  border-radius: 22px;
+  color: #c2e7ff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.manage-account {
+  border: 1px solid #80868b;
+}
+
+.manage-account:hover {
+  background: #343e4a;
+}
+
+.account-panel .switch-account {
+  margin-top: 5px;
+}
+
+[data-account-avatar] {
   border-radius: 50%;
+  object-fit: cover;
 }
 
-.more-apps {
-  margin-top: 13px;
-  padding: 12px 12px 5px;
+.account-photo-settings {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #45494e;
+}
+
+.account-photo-settings button {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 18px;
+  background: #34465e;
+  color: #d3e3fd;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.account-photo-settings p {
+  margin: 6px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #c4c7c5;
+}
+
+.account-photo-settings a[hidden] {
+  display: none;
 }
 
 /* Clock */
@@ -208,6 +316,68 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Weather beneath the clock */
+.clock { z-index: 1; }
+
+.weather { margin-top: 9px; max-width: min(320px, calc(100vw - 46px)); }
+.weather button { font: inherit; cursor: pointer; }
+#weatherButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 5px 9px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 9px;
+  background: rgb(14 19 25 / 70%);
+  color: #f1f5f9;
+  text-align: left;
+  font-size: 13px;
+}
+#weatherButton:hover { background: #293440; }
+#weatherIcon { font-size: 17px; line-height: 1; }
+#weatherMeta { margin: 3px 0 0; font-size: 11px; color: #eee; }
+#weatherMeta a { color: inherit; text-underline-offset: 2px; }
+
+#weatherSettings {
+  position: fixed;
+  inset: 146px auto auto 35px;
+  margin: 0;
+  padding: 16px;
+  width: min(310px, calc(100vw - 32px));
+  max-height: calc(100dvh - 164px);
+  overflow: auto;
+  border: 1px solid #495460;
+  border-radius: 14px;
+  background: #1d252e;
+  color: #f1f5f9;
+  color-scheme: dark;
+  text-shadow: none;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
+}
+#weatherSettings header, .city-search { display: flex; align-items: center; gap: 8px; }
+#weatherSettings header { justify-content: space-between; margin-bottom: 12px; }
+#weatherTitle { font-size: 16px; }
+#weatherSettings label, #cityStatus, #cityResults, #removeWeather { font-size: 13px; }
+#weatherSettings button { padding: 6px 9px; border: 0; border-radius: 7px; color: inherit; background: #354451; }
+#weatherSettings button:hover { background: #43596e; }
+.city-search { margin-top: 5px; }
+.city-search input { min-width: 0; width: 100%; padding: 7px; border: 1px solid #75818e; border-radius: 6px; background: #141a20; color: inherit; }
+#cityStatus:not(:empty), #cityResults:not(:empty), #removeWeather { margin-top: 10px; }
+#cityResults { list-style: none; }
+#cityResults li + li { margin-top: 4px; }
+#cityResults button { width: 100%; text-align: left; }
+.weather :focus-visible { outline: 2px solid #b6d9ff; outline-offset: 2px; }
+
+@media (max-width: 600px) {
+  #weatherSettings { left: 16px; top: 132px; max-height: calc(100dvh - 148px); }
+}
+
+@media (max-width: 800px) and (max-height: 640px) {
+  body .clock { position: relative; inset: auto; margin: 16px 16px 0; }
+  body .dashboard { min-height: auto; }
+}
+
 /* Dashboard */
 
 .dashboard {
@@ -223,146 +393,160 @@ body {
 /* Main Content */
 
 .overlay {
-  width: min(90%, 450px);
-  padding: 30px;
+  width: min(100%, 450px);
+  padding: 28px 30px 22px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 14px;
-  backdrop-filter: blur(5px);
+  background: linear-gradient(150deg, rgb(22 28 34 / 88%), rgb(12 16 20 / 84%));
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: 18px;
+  box-shadow: 0 12px 38px rgb(0 0 0 / 24%);
+  backdrop-filter: blur(12px);
 }
 
 .overlay h1 {
-  margin-bottom: 25px;
+  margin: 0 0 20px;
   font-size: 30px;
+  line-height: 1.2;
   font-weight: 600;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.03em;
 }
 
-/* Search */
-
 .search-form {
-  width: 100%;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #c4ccd3;
 }
 
 .search-form input {
+  display: block;
   width: 100%;
-  padding: 15px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  outline: none;
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  min-height: 48px;
+  padding: 12px 16px 12px 44px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 9%);
+  color: #fff;
+  font: inherit;
   font-size: 15px;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
 }
 
 .search-form input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: #c4ccd3;
 }
 
-.search-form input:focus {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.45);
+.overlay :focus-visible {
+  outline: 2px solid #b6d9ff;
+  outline-offset: 3px;
 }
-
-/* Quick Links */
 
 .quick-links {
   display: flex;
-
   justify-content: center;
   align-items: center;
-
   flex-wrap: wrap;
-
-  gap: 22px;
-
-  margin-top: 22px;
+  gap: 4px 12px;
+  margin-top: 12px;
 }
 
 .quick-links a {
-  color: #ffffff;
-
+  padding: 7px 4px;
+  border-radius: 6px;
+  color: #e5e9ed;
   font-size: 14px;
   text-decoration: none;
-
-  opacity: 0.85;
-
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
 }
 
 .quick-links a:hover {
-  opacity: 1;
-
-  transform: translateY(-2px);
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-/* Wallpaper Controls */
-
+/* The equal side columns keep the pager centered independently of the heart. */
 .wallpaper-controls {
-  display: flex;
-
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
 
-  gap: 12px;
-
-  margin-top: 28px;
+.wallpaper-pager {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .wallpaper-controls button {
+  display: grid;
+  place-items: center;
   width: 42px;
   height: 42px;
-
-  border: 0;
-  border-radius: 8px;
-
-  background: rgba(255, 255, 255, 0.15);
-
-  color: #ffffff;
-
-  font-size: 20px;
-
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
 }
 
 .wallpaper-controls button:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgb(255 255 255 / 18%);
+}
 
-  transform: scale(1.05);
+.wallpaper-controls svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 #wallpaperCounter {
-  min-width: 55px;
-  color: rgba(255, 255, 255, 0.85);
+  min-width: 54px;
+  text-align: center;
+  color: #e5e9ed;
   font-size: 14px;
+  font-variant-numeric: tabular-nums;
 }
 
 .favorite-button {
-  margin-left: 4px;
+  grid-column: 3;
+  justify-self: end;
 }
 
 .favorite-button.is-favorite {
-  color: #ffcc00;
+  color: #ffd166;
 }
 
-.theme-credit,
-.theme-credit a {
+.favorite-button.is-favorite svg {
+  fill: currentColor;
+}
+
+.theme-credit {
+  margin-top: 16px;
+  color: #bdc5cb;
   font-size: 12px;
-  font-weight: 400;
   line-height: 1.5;
-  text-transform: capitalize;
-  color: white;
-  margin-top: 20px;
-  letter-spacing: 1px;
+}
+
+.theme-credit a {
+  color: inherit;
+  text-underline-offset: 2px;
 }
 
 /* Mobile */
@@ -377,9 +561,8 @@ body {
     display: none;
   }
 
-  .apps-menu {
-    right: -4px;
-    width: min(310px, calc(100vw - 28px));
+  .google-panel {
+    right: 12px;
   }
 
   .clock {
@@ -409,6 +592,22 @@ body {
   }
 
   .quick-links {
-    gap: 16px;
+    gap: 4px 10px;
+  }
+}
+
+
+@media (max-width: 340px) {
+  .wallpaper-controls button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .wallpaper-pager {
+    gap: 4px;
+  }
+
+  #wallpaperCounter {
+    min-width: 44px;
   }
 }

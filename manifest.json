@@ -4,11 +4,15 @@
   "description": "A dark Linux-inspired new tab experience with dynamic Tux wallpapers.",
   "version": "1.0.0",
 
+  "permissions": ["storage", "scripting"],
+  "optional_host_permissions": ["https://www.google.com/*"],
+  "background": { "service_worker": "google-photo-worker.js" },
+
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
 
   "icons": {
-    "128": "icons/icontuxdash.jpeg"
+    "128": "icons/tuxdash-128.png"
   }
 }
